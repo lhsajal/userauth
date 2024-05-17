@@ -20,3 +20,12 @@ export async function createNewUser(uData: object) {
     loggerG.info(ApiNamesConstants.INVITE_USER, result)
     return result
 }
+
+export async function passwordResetEmail(email: string) {
+    const token = await getToken({email});
+    console.log(`token emailInvite `, token);
+    //construct email here
+    /*
+    */
+    return await sendEmail();
+}

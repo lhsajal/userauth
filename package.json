@@ -14,10 +14,12 @@
   "author": "sajal.jain@labourhomeindia.com",
   "license": "ISC",
   "dependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/jsonwebtoken": "^9.0.6",
     "@types/winston": "^2.4.4",
     "@types/yamljs": "^0.2.34",
     "assert": "^2.1.0",
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
