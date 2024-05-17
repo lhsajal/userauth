@@ -1,0 +1,19 @@
+definition:
+  openapi: 3.0.0
+  info:
+    title: User Auth APIs
+    description: API endpoints user authentication and authorization
+    contact:
+      name: Sajal Jain
+      email: sajal.jain@labourhomeindia.com
+      url: 'https://github.com/DesmondSanctity/node-js-swagger'
+    version: 1.0.0
+  servers:
+    - url: 'http://localhost:8080/'
+      description: Local server
+    - url: <your live url here>
+      description: Live server
+  tags:
+    - name: Roles
+    - name: Users
+paths: {}
