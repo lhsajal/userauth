@@ -31,7 +31,7 @@ namespace tokenServices {
         }
     }
 
-    export async function signToken(req: Request, res: Response, next: NextFunction) {
+    export async function signToken(payload: object) {
         // Token signing options
         const signOptions: jwt.SignOptions = {
             issuer: "Lhforce",
@@ -42,11 +42,12 @@ namespace tokenServices {
         };
 
         //console.log(process.env.TOKEN_PRIVATE_KEY)
-        const token = jwt.sign({ email: "sajal.jain@labourhomeindia.com" }, process.env.TOKEN_PRIVATE_KEY!, signOptions);
+        const token = jwt.sign(payload, process.env.TOKEN_PRIVATE_KEY!, signOptions);
         console.log("Token :" + token);
         loggerG.info(ApiNamesConstants.TOKEN_SIGN_FOR_INVITED_USESR, token);
 
-        return res.status(200).json({ token });
+        //return res.status(200).json({ token });
+        return token
     }
 
     export async function getToken(payload: object) {

@@ -15,6 +15,6 @@ router.post('/normal-login', userControllerServices.normalLoginController);
 
 //router.get('/normalLogin', normalLoginController);
 
-router.get('/generate-token', tokenServices.signToken);
+//router.get('/generate-token', tokenServices.signToken);
 
 export default router;

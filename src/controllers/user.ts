@@ -9,6 +9,7 @@ import * as mongoDB from "mongodb";
 import { DbConstants } from '../database/dbConstants';
 import bcrypt from 'bcrypt';
 import { SALTROUNDS } from '../util/projectConstants';
+import tokenServices from '../middlewares/tokenService';
 
 namespace userControllerServices {
     export const inviteUser: RequestHandler = async (req, res, next) => {
@@ -290,6 +291,9 @@ namespace userControllerServices {
                 if (!status) {
                     response["message"] = ApiResponseMessages.LOGIN_UNSUCCESSFUL;
                     response["status"] = types.ApiStatusConstant.FAILED
+                } else {
+                    const token = await tokenServices.signToken({ email });
+                    response["data"] = { token }
                 }
             }
             return res.status(200).json(response);
